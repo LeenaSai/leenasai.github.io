@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leena Sai Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #0a0a0a;
+      color: #f0f0f0;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: #00f0ff;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 20px;
+      color: #00f0ff;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      width: 100%;
+      background-color: #111;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+
+    nav a {
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    /* Intro Section */
+    #intro {
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #intro h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    #intro p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+
+    /* About Me */
+    #about {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Skills */
+    #skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .skill {
+      background-color: #111;
+      padding: 15px 25px;
+      border-radius: 10px;
+      text-align: center;
+      flex: 1 1 120px;
+    }
+
+    /* Experience */
+    #experience .job {
+      background-color: #111;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+
+    #experience .job h3 {
+      margin-bottom: 10px;
+      color: #00f0ff;
+    }
+
+    #experience .job p {
+      font-size: 0.95rem;
+    }
+
+    /* Projects */
+    #projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .project {
+      background-color: #111;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .project h3 {
+      margin-bottom: 10px;
+      color: #00f0ff;
+    }
+
+    /* Contact */
+    #contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      background-color: #222;
+      color: #f0f0f0;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background-color: #00f0ff;
+      color: #111;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #00c8d9;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+      color: #777;
+    }
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      #about {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div><strong>Leena Sai</strong></div>
+    <div>
+      <a href="#intro">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Introduction -->
+  <section id="intro">
+    <h1>Hi, I'm Leena Sai</h1>
+    <p>Blending software engineering and data analytics to build reliable, secure, and scalable web and mobile applications.</p>
+  </section>
+
+  <!-- About Me -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a software engineer and data analyst with over 3 years of experience in web development, data analytics, and building scalable applications. I am passionate about creating meaningful solutions using data-driven insights and modern technology.</p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skill">Python</div>
+    <div class="skill">SQL</div>
+    <div class="skill">React</div>
+    <div class="skill">Node.js</div>
+    <div class="skill">Power BI</div>
+    <div class="skill">ETL / Data Pipelines</div>
+    <div class="skill">Excel / Data Visualization</div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="job">
+      <h3>Anuktha Infotech Pvt Ltd | Software Engineer | Jan 2023 - Jul 2023</h3>
+      <p>Developed scalable web applications using React and Node.js, optimized PostgreSQL queries, and implemented secure RESTful APIs with JWT authentication.</p>
+    </div>
+    <div class="job">
+      <h3>Innovalley IT Services | Data Analyst | Aug 2021 - Dec 2022</h3>
+      <p>Built ETL pipelines, cleaned and analyzed large datasets, created dashboards in Power BI, and automated reporting workflows.</p>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Online Food Delivery System</h3>
+      <p>Developed a React Native app allowing users to browse restaurants, add items to a cart, and place orders. Built backend APIs with Node.js and Express.js, using JWT authentication and MongoDB for data storage.</p>
+    </div>
+    <div class="project">
+      <h3>CVD Prediction System</h3>
+      <p>Implemented a machine learning model to predict cardiovascular disease risk using Python, Pandas, and Scikit-learn. Created interactive dashboards for insights visualization.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Leena Sai | Designed & Built by Me
+  </footer>
+
+</body>
+</html>
