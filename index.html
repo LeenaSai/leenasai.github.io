@@ -1,178 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leena Sai Rajendra | Software Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Leena Sai Portfolio</title>
   <style>
-    * {box-sizing: border-box;margin: 0;padding: 0;font-family: 'Poppins', sans-serif;}
-    body {background: #0d0d0d;color: #e5e5e5;line-height: 1.6;scroll-behavior: smooth;}
+    /* Background */
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #e5e5e5;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
 
-    a {color: #6c63ff;text-decoration: none;transition: color 0.3s;}
-    a:hover {color: #ff6ec7;}
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
 
-    section {padding: 80px 20px;max-width: 1200px;margin: auto;}
-    h1, h2, h3 {margin-bottom: 20px;font-weight: 700;}
-    h2 {color: #6c63ff;font-size: 2rem;text-align: center;margin-bottom: 40px;}
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
 
-    /* Navbar */
-    nav {position: fixed;width: 100%;background: rgba(13,13,13,0.9);
-         padding: 15px 40px;display: flex;justify-content: space-between;align-items: center;
-         z-index: 1000;backdrop-filter: blur(10px);border-bottom: 1px solid rgba(255,255,255,0.05);}
-    nav a {margin-left: 25px;font-weight: 500;}
+    header p {
+      font-size: 1.2rem;
+      color: #bdbdbd;
+    }
 
-    /* Intro */
-    #intro {text-align: center;min-height: 100vh;display: flex;
-            flex-direction: column;justify-content: center;align-items: center;}
-    #intro h1 {font-size: 3.5rem;margin-bottom: 15px;background: linear-gradient(90deg,#6c63ff,#ff6ec7);
-               -webkit-background-clip: text;-webkit-text-fill-color: transparent;}
-    #intro p {font-size: 1.2rem;max-width: 650px;color: #bbb;}
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
 
-    /* Glassmorphism Card */
-    .card {background: rgba(255,255,255,0.05);padding: 25px;border-radius: 18px;
-           backdrop-filter: blur(15px);border: 1px solid rgba(255,255,255,0.1);
-           box-shadow: 0 8px 25px rgba(0,0,0,0.4);transition: transform 0.3s ease, box-shadow 0.3s ease;}
-    .card:hover {transform: translateY(-8px);box-shadow: 0 12px 30px rgba(108,99,255,0.4);}
+    h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+    }
 
-    /* Skills */
-    #skills {display: flex;flex-wrap: wrap;gap: 20px;justify-content: center;}
-    .skill {flex: 1 1 140px;text-align: center;}
+    /* Floating Cards */
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 1rem 0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-    /* Experience */
-    #experience {display: grid;gap: 25px;}
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.5);
+    }
+
+    /* Skills Grid */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .skills div {
+      background: rgba(255, 255, 255, 0.07);
+      padding: 1rem;
+      border-radius: 12px;
+    }
 
     /* Projects Carousel */
-    #projects {position: relative;}
-    .carousel-container {position: relative;overflow: hidden;}
-    .carousel {display: flex;transition: transform 0.6s ease-in-out;}
-    .project {min-width: 100%;flex: 0 0 100%;text-align: center;}
-    .project h3 {margin-bottom: 10px;color: #6c63ff;}
-    .project p {color: #ccc;}
+    .carousel {
+      position: relative;
+      display: flex;
+      overflow: hidden;
+    }
 
-    /* Arrows */
-    .carousel-controls {position: absolute;top: 50%;width: 100%;display: flex;
-                        justify-content: space-between;transform: translateY(-50%);padding: 0 15px;}
-    .control-btn {background: rgba(108,99,255,0.85);border: none;color: #fff;
-                  font-size: 1.8rem;padding: 12px;cursor: pointer;border-radius: 50%;
-                  transition: background 0.3s;}
-    .control-btn:hover {background: #ff6ec7;}
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .project-card {
+      min-width: 300px;
+      background: rgba(255, 255, 255, 0.07);
+      margin: 0 1rem;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border-radius: 50%;
+      transition: background 0.3s ease;
+    }
+
+    .carousel-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
 
     /* Contact */
-    #contact {text-align: center;}
-    #contact a {font-weight: 600;}
+    .contact {
+      text-align: center;
+    }
 
-    /* Footer */
-    footer {text-align: center;padding: 25px;background: #111;color: #777;}
+    .contact a {
+      color: #64ffda;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-    /* Responsive */
-    @media(max-width: 768px) {
-      #intro h1 {font-size: 2.5rem;}
-      nav {padding: 15px 20px;}
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #aaa;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav>
-    <div><strong>Leena Sai</strong></div>
-    <div>
-      <a href="#intro">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+  <header>
+    <h1>Leena Sai</h1>
+    <p>Web Developer & Data Analyst | Passionate about Design + Technology</p>
+  </header>
 
-  <!-- Intro -->
-  <section id="intro">
-    <h1>Hi, I'm Leena Sai</h1>
-    <p>Creative Software Engineer blending clean code with modern design. Passionate about web, mobile, and backend systems with a designer’s eye for detail.</p>
-  </section>
-
-  <!-- About -->
   <section id="about">
     <h2>About Me</h2>
-    <p>I am a Software Engineer with expertise in OOP, algorithms, and full-stack development. I enjoy crafting user-friendly digital experiences, combining functionality with modern design aesthetics.</p>
+    <div class="card">
+      <p>
+        I am a software engineer and data analyst with experience in building scalable applications, 
+        creating ETL pipelines, and analyzing datasets for actionable insights. 
+        I enjoy blending functionality with creative design to deliver impactful user experiences.
+      </p>
+    </div>
   </section>
 
-  <!-- Skills -->
   <section id="skills">
     <h2>Skills</h2>
-    <div class="card skill">Java</div>
-    <div class="card skill">TypeScript / JavaScript</div>
-    <div class="card skill">React / React Native</div>
-    <div class="card skill">Node.js / Express</div>
-    <div class="card skill">Spring Boot</div>
-    <div class="card skill">SQL / NoSQL</div>
-    <div class="card skill">Docker / Kubernetes</div>
-    <div class="card skill">AWS / Azure / GCP</div>
+    <div class="skills">
+      <div>Python</div>
+      <div>SQL</div>
+      <div>React</div>
+      <div>Node.js</div>
+      <div>Power BI</div>
+      <div>AWS</div>
+    </div>
   </section>
 
-  <!-- Experience -->
   <section id="experience">
     <h2>Experience</h2>
     <div class="card">
       <h3>Anukta Infotech Pvt Ltd | Software Engineer</h3>
-      <p>Developed modular components with Node.js & React, optimized PostgreSQL, built secure REST APIs, and collaborated in Agile sprints with CI/CD pipelines.</p>
+      <p>Jan 2023 - Jul 2023</p>
+      <p>Worked on scalable web applications, APIs, and optimized SQL queries for performance.</p>
     </div>
     <div class="card">
-      <h3>Innovalley IT Services | Web Developer Intern</h3>
-      <p>Built backend services in Node.js, created React modules, connected APIs to MySQL DB, and improved developer onboarding with process documentation.</p>
+      <h3>Innovalley IT Services | Data Analyst Intern</h3>
+      <p>Mar 2021 - Jul 2021</p>
+      <p>Developed ETL pipelines, validated datasets, and built dashboards in Tableau and Excel.</p>
     </div>
   </section>
 
-  <!-- Projects Carousel -->
   <section id="projects">
     <h2>Projects</h2>
-    <div class="carousel-container">
-      <div class="carousel" id="projectCarousel">
-        <div class="project card">
+    <div class="carousel">
+      <button class="carousel-btn prev">&#10094;</button>
+      <div class="carousel-track">
+        <div class="project-card">
+          <h3>Cardiovascular Disease Prediction</h3>
+          <p>Analyzed patient data using Python & SQL, built Power BI dashboards for risk patterns.</p>
+        </div>
+        <div class="project-card">
+          <h3>Fake News Detection</h3>
+          <p>Classified 100K+ news articles with NLP in Python, visualized trends in Tableau.</p>
+        </div>
+        <div class="project-card">
           <h3>Online Food Delivery System</h3>
-          <p>Cross-platform mobile app with React Native + Node.js/Express backend. Secure JWT authentication & MongoDB integration.</p>
-        </div>
-        <div class="project card">
-          <h3>Task Management App</h3>
-          <p>React Native + Node.js + TypeScript app with real-time sync. Backend deployed on Heroku with complete testing workflow.</p>
-        </div>
-        <div class="project card">
-          <h3>Student Portal System</h3>
-          <p>React + Express.js with role-based access control. Optimized performance for faster load times and secure sessions.</p>
+          <p>React Native app with secure Node.js APIs and real-time order management.</p>
         </div>
       </div>
-      <div class="carousel-controls">
-        <button class="control-btn" onclick="prevSlide()">&#10094;</button>
-        <button class="control-btn" onclick="nextSlide()">&#10095;</button>
-      </div>
+      <button class="carousel-btn next">&#10095;</button>
     </div>
   </section>
 
-  <!-- Contact -->
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: <a href="mailto:leenasai182@gmail.com">leenasai182@gmail.com</a></p>
-    <p>Location: Chicago, IL</p>
+    <div class="card contact">
+      <p>Email: <a href="mailto:leenasai182@gmail.com">leenasai182@gmail.com</a></p>
+      <p>Location: Chicago, IL</p>
+    </div>
   </section>
 
-  <!-- Footer -->
   <footer>
-    &copy; 2025 Leena Sai | Software Engineer Portfolio
+    <p>© 2025 Leena Sai</p>
   </footer>
 
-  <!-- Carousel Script -->
   <script>
-    const carousel = document.getElementById('projectCarousel');
+    // Carousel functionality
+    const track = document.querySelector('.carousel-track');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
     let index = 0;
-    function showSlide(i) {
-      const total = carousel.children.length;
-      index = (i + total) % total;
-      carousel.style.transform = `translateX(${-index * 100}%)`;
-    }
-    function nextSlide() { showSlide(index + 1); }
-    function prevSlide() { showSlide(index - 1); }
+
+    nextBtn.addEventListener('click', () => {
+      const cards = document.querySelectorAll('.project-card');
+      if (index < cards.length - 1) index++;
+      track.style.transform = `translateX(-${index * 320}px)`;
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (index > 0) index--;
+      track.style.transform = `translateX(-${index * 320}px)`;
+    });
   </script>
 </body>
 </html>
