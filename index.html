@@ -4,56 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leena Sai Rajendra | Software Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    * {box-sizing: border-box;margin: 0;padding: 0;font-family: 'Roboto', sans-serif;}
-    body {background: #0a0a0a;color: #f0f0f0;line-height: 1.6;scroll-behavior: smooth;}
-    a {color: #00f0ff;text-decoration: none;}
-    section {padding: 60px 20px;max-width: 1100px;margin: auto;}
-    h1, h2, h3 {margin-bottom: 20px;color: #00f0ff;}
+    * {box-sizing: border-box;margin: 0;padding: 0;font-family: 'Poppins', sans-serif;}
+    body {background: #0d0d0d;color: #e5e5e5;line-height: 1.6;scroll-behavior: smooth;}
+
+    a {color: #6c63ff;text-decoration: none;transition: color 0.3s;}
+    a:hover {color: #ff6ec7;}
+
+    section {padding: 80px 20px;max-width: 1200px;margin: auto;}
+    h1, h2, h3 {margin-bottom: 20px;font-weight: 700;}
+    h2 {color: #6c63ff;font-size: 2rem;text-align: center;margin-bottom: 40px;}
 
     /* Navbar */
-    nav {position: fixed;width: 100%;background: #111;padding: 15px 20px;
-         display: flex;justify-content: space-between;align-items: center;
-         z-index: 1000;box-shadow: 0 2px 5px rgba(0,0,0,0.5);}
-    nav a {margin-left: 20px;font-weight: 500;}
+    nav {position: fixed;width: 100%;background: rgba(13,13,13,0.9);
+         padding: 15px 40px;display: flex;justify-content: space-between;align-items: center;
+         z-index: 1000;backdrop-filter: blur(10px);border-bottom: 1px solid rgba(255,255,255,0.05);}
+    nav a {margin-left: 25px;font-weight: 500;}
 
     /* Intro */
     #intro {text-align: center;min-height: 100vh;display: flex;
             flex-direction: column;justify-content: center;align-items: center;}
-    #intro h1 {font-size: 3rem;margin-bottom: 10px;}
-    #intro p {font-size: 1.2rem;max-width: 600px;}
+    #intro h1 {font-size: 3.5rem;margin-bottom: 15px;background: linear-gradient(90deg,#6c63ff,#ff6ec7);
+               -webkit-background-clip: text;-webkit-text-fill-color: transparent;}
+    #intro p {font-size: 1.2rem;max-width: 650px;color: #bbb;}
 
-    /* Floating Cards */
-    .card {background: #111;padding: 20px;border-radius: 15px;
-           box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-           transition: transform 0.3s ease, box-shadow 0.3s ease;}
-    .card:hover {transform: translateY(-10px) scale(1.05);
-                 box-shadow: 0 8px 20px rgba(0, 240, 255, 0.4);}
+    /* Glassmorphism Card */
+    .card {background: rgba(255,255,255,0.05);padding: 25px;border-radius: 18px;
+           backdrop-filter: blur(15px);border: 1px solid rgba(255,255,255,0.1);
+           box-shadow: 0 8px 25px rgba(0,0,0,0.4);transition: transform 0.3s ease, box-shadow 0.3s ease;}
+    .card:hover {transform: translateY(-8px);box-shadow: 0 12px 30px rgba(108,99,255,0.4);}
 
     /* Skills */
     #skills {display: flex;flex-wrap: wrap;gap: 20px;justify-content: center;}
     .skill {flex: 1 1 140px;text-align: center;}
 
     /* Experience */
-    #experience {display: grid;gap: 20px;}
+    #experience {display: grid;gap: 25px;}
 
-    /* Project Carousel */
-    #projects {position: relative;overflow: hidden;}
-    .carousel {display: flex;transition: transform 0.5s ease-in-out;}
+    /* Projects Carousel */
+    #projects {position: relative;}
+    .carousel-container {position: relative;overflow: hidden;}
+    .carousel {display: flex;transition: transform 0.6s ease-in-out;}
     .project {min-width: 100%;flex: 0 0 100%;text-align: center;}
-    .carousel-controls {position: absolute;top: 50%;width: 100%;
-                        display: flex;justify-content: space-between;
-                        transform: translateY(-50%);}
-    .control-btn {background: rgba(0,0,0,0.6);border: none;color: #00f0ff;
-                  font-size: 2rem;padding: 10px;cursor: pointer;border-radius: 50%;}
-    .control-btn:hover {background: rgba(0,240,255,0.8);color: #111;}
+    .project h3 {margin-bottom: 10px;color: #6c63ff;}
+    .project p {color: #ccc;}
+
+    /* Arrows */
+    .carousel-controls {position: absolute;top: 50%;width: 100%;display: flex;
+                        justify-content: space-between;transform: translateY(-50%);padding: 0 15px;}
+    .control-btn {background: rgba(108,99,255,0.85);border: none;color: #fff;
+                  font-size: 1.8rem;padding: 12px;cursor: pointer;border-radius: 50%;
+                  transition: background 0.3s;}
+    .control-btn:hover {background: #ff6ec7;}
 
     /* Contact */
     #contact {text-align: center;}
+    #contact a {font-weight: 600;}
 
     /* Footer */
-    footer {text-align: center;padding: 20px;background: #111;color: #777;}
+    footer {text-align: center;padding: 25px;background: #111;color: #777;}
+
+    /* Responsive */
+    @media(max-width: 768px) {
+      #intro h1 {font-size: 2.5rem;}
+      nav {padding: 15px 20px;}
+    }
   </style>
 </head>
 <body>
@@ -71,16 +87,16 @@
     </div>
   </nav>
 
-  <!-- Introduction -->
+  <!-- Intro -->
   <section id="intro">
     <h1>Hi, I'm Leena Sai</h1>
-    <p>Software Engineer specializing in building reliable, secure, and scalable applications across web, mobile, and backend systems.</p>
+    <p>Creative Software Engineer blending clean code with modern design. Passionate about web, mobile, and backend systems with a designer’s eye for detail.</p>
   </section>
 
   <!-- About -->
   <section id="about">
     <h2>About Me</h2>
-    <p>I am a Software Engineer with a strong foundation in OOP, algorithms, and full-stack development. Experienced in Java, TypeScript, React, Node.js, and Spring Boot. Passionate about delivering scalable, maintainable solutions through Agile collaboration.</p>
+    <p>I am a Software Engineer with expertise in OOP, algorithms, and full-stack development. I enjoy crafting user-friendly digital experiences, combining functionality with modern design aesthetics.</p>
   </section>
 
   <!-- Skills -->
@@ -88,11 +104,10 @@
     <h2>Skills</h2>
     <div class="card skill">Java</div>
     <div class="card skill">TypeScript / JavaScript</div>
-    <div class="card skill">Python</div>
-    <div class="card skill">SQL / NoSQL</div>
     <div class="card skill">React / React Native</div>
     <div class="card skill">Node.js / Express</div>
     <div class="card skill">Spring Boot</div>
+    <div class="card skill">SQL / NoSQL</div>
     <div class="card skill">Docker / Kubernetes</div>
     <div class="card skill">AWS / Azure / GCP</div>
   </section>
@@ -101,35 +116,37 @@
   <section id="experience">
     <h2>Experience</h2>
     <div class="card">
-      <h3>Anukta Infotech Pvt Ltd | Software Engineer | Jan 2023 - Jul 2023</h3>
-      <p>Designed modular components in Node.js/React, developed secure REST APIs, optimized PostgreSQL queries, and applied Agile practices with CI/CD pipelines.</p>
+      <h3>Anukta Infotech Pvt Ltd | Software Engineer</h3>
+      <p>Developed modular components with Node.js & React, optimized PostgreSQL, built secure REST APIs, and collaborated in Agile sprints with CI/CD pipelines.</p>
     </div>
     <div class="card">
-      <h3>Innovalley IT Services | Web Developer Intern | Mar 2021 - Jul 2021</h3>
-      <p>Built backend services with Node.js/Express, developed React modules, integrated MySQL DB, and documented workflows for smoother onboarding.</p>
+      <h3>Innovalley IT Services | Web Developer Intern</h3>
+      <p>Built backend services in Node.js, created React modules, connected APIs to MySQL DB, and improved developer onboarding with process documentation.</p>
     </div>
   </section>
 
   <!-- Projects Carousel -->
   <section id="projects">
     <h2>Projects</h2>
-    <div class="carousel" id="projectCarousel">
-      <div class="project card">
-        <h3>Online Food Delivery System</h3>
-        <p>React Native + Node.js/Express backend + MongoDB. Implemented JWT authentication & secure session handling.</p>
+    <div class="carousel-container">
+      <div class="carousel" id="projectCarousel">
+        <div class="project card">
+          <h3>Online Food Delivery System</h3>
+          <p>Cross-platform mobile app with React Native + Node.js/Express backend. Secure JWT authentication & MongoDB integration.</p>
+        </div>
+        <div class="project card">
+          <h3>Task Management App</h3>
+          <p>React Native + Node.js + TypeScript app with real-time sync. Backend deployed on Heroku with complete testing workflow.</p>
+        </div>
+        <div class="project card">
+          <h3>Student Portal System</h3>
+          <p>React + Express.js with role-based access control. Optimized performance for faster load times and secure sessions.</p>
+        </div>
       </div>
-      <div class="project card">
-        <h3>Task Management App</h3>
-        <p>React Native + Node.js app with TypeScript modules. Real-time sync & backend deployed on Heroku.</p>
+      <div class="carousel-controls">
+        <button class="control-btn" onclick="prevSlide()">&#10094;</button>
+        <button class="control-btn" onclick="nextSlide()">&#10095;</button>
       </div>
-      <div class="project card">
-        <h3>Student Portal System</h3>
-        <p>React + Express.js with role-based access (Admin/Teacher/Student). Optimized client-server performance.</p>
-      </div>
-    </div>
-    <div class="carousel-controls">
-      <button class="control-btn" onclick="prevSlide()">&#10094;</button>
-      <button class="control-btn" onclick="nextSlide()">&#10095;</button>
     </div>
   </section>
 
@@ -137,7 +154,6 @@
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:leenasai182@gmail.com">leenasai182@gmail.com</a></p>
-    <p>Phone: +1 (312)-792-7051</p>
     <p>Location: Chicago, IL</p>
   </section>
 
