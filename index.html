@@ -4,130 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Leena Sai Rajendra - Software Engineer</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #f5f5f5;
-      scroll-behavior: smooth;
-    }
-    h1,h2,h3{margin:0 0 15px;}
-    section{padding:80px 10%;}
-
-    /* Navbar */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(15,32,39,0.95);
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 5%;
-      flex-wrap: wrap;
-    }
-    nav .brand { font-weight: 700; font-size: 1.2rem; color: #fff; }
-    nav .nav-links {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-    nav .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 8px 12px;
-      border-radius: 5px;
-      transition: all 0.3s;
-    }
-    nav .nav-links a:hover { background: rgba(255,255,255,0.2); color: #ff6ec7; }
-
-    /* Intro */
-    #intro { min-height: 100vh; display: flex; align-items: center; }
-    .intro-container {
-      display: flex; flex-wrap: wrap;
-      justify-content: space-between; align-items: center; gap: 40px;
-    }
-    .intro-text { flex:1; }
-    .intro-text h1{ font-size:2.8rem; color:#6c63ff; }
-    .intro-text p{ font-size:1.2rem; margin-bottom:25px; }
-    .btn {
-      display:inline-block; padding:12px 22px; border-radius:8px;
-      text-decoration:none; font-weight:600; margin-right:15px;
-      background:#6c63ff; color:#fff; transition:background 0.3s;
-    }
-    .btn:hover{ background:#ff6ec7; }
-    .btn.secondary{ background:transparent; border:2px solid #6c63ff; }
-    .btn.secondary:hover{ background:#6c63ff; }
-
-    .intro-image { flex:1; text-align:center; }
-    .intro-image img {
-      max-width:320px; border-radius:50%;
-      border:4px solid #6c63ff;
-      box-shadow:0 8px 25px rgba(0,0,0,0.5);
-    }
-
-    /* Cards */
-    .card-container{
-      display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-      gap:20px;
-    }
-    .card{
-      background:#1a1a1a; padding:25px; border-radius:15px;
-      transition: transform 0.3s;
-    }
-    .card:hover{ transform:translateY(-5px); }
-
-    /* Projects Carousel */
-    .carousel-container{ position:relative; overflow:hidden; }
-    .carousel{ display:flex; transition: transform 0.5s ease-in-out; }
-    .project.card{
-      flex:0 0 300px; margin:0 10px; text-align:center;
-    }
-    .control-btn{
-      position:absolute; top:50%; transform:translateY(-50%);
-      background:#6c63ff; color:#fff; border:none;
-      padding:12px; border-radius:50%; cursor:pointer;
-    }
-    .control-btn:hover{ background:#ff6ec7; }
-    .control-btn:first-of-type{ left:10px; }
-    .control-btn:last-of-type{ right:10px; }
-    .know-more{
-      margin-top:15px; padding:10px 18px; border-radius:8px;
-      border:none; cursor:pointer; font-weight:500;
-      background:#6c63ff; color:#fff; transition: background 0.3s;
-    }
-    .know-more:hover{ background:#ff6ec7; }
-
-    /* Modal */
-    .modal{
-      display:none; position:fixed; left:0; top:0;
-      width:100%; height:100%; background:rgba(0,0,0,0.8);
-      z-index:2000; justify-content:center; align-items:center;
-    }
-    .modal-content{
-      background:#1a1a1a; padding:30px; border-radius:15px;
-      max-width:600px; width:90%; color:#e5e5e5;
-    }
-    .modal-content h3{ color:#6c63ff; }
-    .modal-content ul{ padding-left:20px; }
-    .close{ float:right; font-size:1.8rem; cursor:pointer; color:#ff6ec7; }
-
-    /* Responsive */
-    @media (max-width:900px){
-      .intro-container{ flex-direction:column-reverse; text-align:center; }
-      .intro-image img{ max-width:250px; }
-      nav{ justify-content: center; gap:10px; }
-    }
-    @media (max-width:500px){
-      nav .nav-links { flex-direction: column; align-items: center; gap:10px; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <!-- Navbar -->
   <nav>
     <div class="brand">Leena Sai</div>
@@ -136,7 +16,6 @@
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
-      <a href="#honors">Honors</a>
       <a href="#contact">Contact</a>
       <a href="resources/Resume-LeenaSaiRajendra.pdf" download="LeenaSaiRajendra_Resume.pdf">Resume</a>
     </div>
@@ -149,11 +28,10 @@
         <h1>Leena Sai Rajendra</h1>
         <h3>Software Engineer</h3>
         <p>
-          Software Engineer with experience designing, developing, and testing 
-          applications across web, mobile, and backend systems. Skilled in 
-          Java, TypeScript, SQL/NoSQL, cloud platforms, and CI/CD.
+          Experienced Software Engineer designing, developing, and testing web, mobile, and backend applications.
+          Skilled in Java, TypeScript, SQL/NoSQL, cloud platforms, and CI/CD pipelines.
         </p>
-        <a href="#contact" class="btn">Contact Me</a>
+        <a href="#contact" class="btn primary">Contact Me</a>
         <a href="resources/Resume-LeenaSaiRajendra.pdf" class="btn secondary" download="LeenaSaiRajendra_Resume.pdf">Download Resume</a>
       </div>
       <div class="intro-image">
@@ -229,14 +107,7 @@
     </div>
   </section>
 
-  <!-- Honors -->
-  <section id="honors">
-    <h2>Honors & Achievements</h2>
-    <div class="card-container">
-      <div class="card">Upsilon Pi Epsilon (UPE) International Honor Society for Computing & Information Disciplines – IIT</div>
-      <div class="card">First Class Distinction in Bachelors of Technology - KLU</div>
-    </div>
-  </section>
+ 
 
   <!-- Modal -->
   <div id="projectModal" class="modal">
@@ -258,63 +129,6 @@
     </form>
   </section>
 
-  <script>
-    /* Carousel */
-    let index = 0;
-    function showSlide() {
-      const carousel = document.getElementById("projectCarousel");
-      carousel.style.transform = `translateX(${-index * 320}px)`;
-    }
-    function prevSlide() { if(index>0) index--; showSlide(); }
-    function nextSlide() {
-      const total = document.querySelectorAll(".project.card").length;
-      if(index<total-1) index++;
-      showSlide();
-    }
-
-    /* Modal */
-    const projectDetails = {
-      food: {
-        title: "Online Food Delivery System (May 2025)",
-        details:[
-          "Developed a React Native app allowing users to browse restaurants, add items to a cart, and place orders.",
-          "Built backend APIs using Node.js/Express with JWT authentication.",
-          "Structured MongoDB collections for restaurants, orders, and users.",
-          "Used TypeScript for scalable code."
-        ]
-      },
-      task: {
-        title: "Task Management App (Dec 2024)",
-        details:[
-          "Cross-platform task app in React Native with task CRUD and real-time sync.",
-          "Backend in Node.js/Express for data sync.",
-          "Reusable TypeScript UI components.",
-          "Deployed backend on Heroku and tested APIs with Postman."
-        ]
-      },
-      portal: {
-        title:"Student Portal System (May 2024)",
-        details:[
-          "React web portal for student assignments, grades, and announcements.",
-          "Role-based access control in Express.js (Admin, Teacher, Student).",
-          "Secure login flows and session management.",
-          "Optimized client-server communication for performance."
-        ]
-      }
-    };
-    function openModal(project){
-      const modal=document.getElementById("projectModal");
-      document.getElementById("modalTitle").textContent = projectDetails[project].title;
-      const detailsList = document.getElementById("modalDetails");
-      detailsList.innerHTML = "";
-      projectDetails[project].details.forEach(d=>{
-        const li=document.createElement("li"); li.textContent=d;
-        detailsList.appendChild(li);
-      });
-      modal.style.display="flex";
-    }
-    function closeModal(){ document.getElementById("projectModal").style.display="none"; }
-    window.onclick = function(event){ if(event.target===document.getElementById("projectModal")) closeModal(); }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
