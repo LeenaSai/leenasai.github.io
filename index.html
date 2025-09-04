@@ -1,62 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leena Sai Rajendra | Software Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leena Sai - Portfolio</title>
   <style>
-    * {box-sizing: border-box;margin: 0;padding: 0;font-family: 'Poppins', sans-serif;}
-    body {background: linear-gradient(135deg,#0d0d0d,#1a1a2e);color: #e5e5e5;line-height: 1.6;scroll-behavior: smooth;}
-
-    a {color: #6c63ff;text-decoration: none;transition: color 0.3s;}
-    a:hover {color: #ff6ec7;}
-
-    section {padding: 80px 20px;max-width: 1200px;margin: auto;}
-    h1, h2, h3 {margin-bottom: 20px;font-weight: 700;}
-    h2 {color: #6c63ff;font-size: 2rem;text-align: center;margin-bottom: 40px;}
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #f5f5f5;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3 {
+      margin: 0 0 15px;
+    }
+    section {
+      padding: 80px 10%;
+    }
 
     /* Navbar */
-    nav {position: fixed;width: 100%;background: rgba(13,13,13,0.9);
-         padding: 15px 40px;display: flex;justify-content: space-between;align-items: center;
-         z-index: 1000;backdrop-filter: blur(10px);border-bottom: 1px solid rgba(255,255,255,0.05);}
-    nav a {margin-left: 25px;font-weight: 500;}
+    nav {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      background: rgba(15, 32, 39, 0.95);
+      padding: 15px 10%;
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+      z-index: 1000;
+    }
+    nav a {
+      text-decoration: none;
+      color: #f5f5f5;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #ff6ec7;
+    }
 
     /* Intro */
-    #intro {text-align: center;min-height: 100vh;display: flex;
-            flex-direction: column;justify-content: center;align-items: center;}
-    #intro h1 {font-size: 3.5rem;margin-bottom: 15px;background: linear-gradient(90deg,#6c63ff,#ff6ec7);
-               -webkit-background-clip: text;-webkit-text-fill-color: transparent;}
-    #intro p {font-size: 1.2rem;max-width: 650px;color: #bbb;}
+    #intro {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+    .intro-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      width: 100%;
+    }
+    .intro-text {
+      flex: 1;
+    }
+    .intro-text h1 {
+      font-size: 2.8rem;
+      color: #6c63ff;
+    }
+    .intro-text p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 8px;
+      background: #6c63ff;
+      color: #fff;
+      margin-right: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn:hover { background: #ff6ec7; }
+    .btn.secondary {
+      background: transparent;
+      border: 2px solid #6c63ff;
+    }
+    .btn.secondary:hover {
+      background: #6c63ff;
+      color: #fff;
+    }
+    .intro-image {
+      flex: 1;
+      text-align: center;
+    }
+    .intro-image img {
+      max-width: 320px;
+      border-radius: 50%;
+      border: 4px solid #6c63ff;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    }
 
-    /* Glassmorphism Card */
-    .card {background: rgba(255,255,255,0.05);padding: 25px;border-radius: 18px;
-           backdrop-filter: blur(15px);border: 1px solid rgba(255,255,255,0.1);
-           box-shadow: 0 8px 25px rgba(0,0,0,0.4);transition: transform 0.3s ease, box-shadow 0.3s ease;}
-    .card:hover {transform: translateY(-8px);box-shadow: 0 12px 30px rgba(108,99,255,0.4);}
-
-    /* Skills */
-    #skills {display: flex;flex-wrap: wrap;gap: 20px;justify-content: center;}
-    .skill {flex: 1 1 140px;text-align: center;}
-
-    /* Experience */
-    #experience {display: grid;gap: 25px;}
+    /* Skills & Experience Cards */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #1a1a1a;
+      padding: 25px;
+      border-radius: 15px;
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
 
     /* Projects Carousel */
-    #projects {position: relative;}
-    .carousel-container {position: relative;overflow: hidden;}
-    .carousel {display: flex;transition: transform 0.6s ease-in-out;}
-    .project {min-width: 100%;flex: 0 0 100%;text-align: center;}
-    .project h3 {margin-bottom: 10px;color: #6c63ff;}
-    .project p {color: #ccc;}
-
-    /* Arrows */
-    .carousel-controls {position: absolute;top: 50%;width: 100%;display: flex;
-                        justify-content: space-between;transform: translateY(-50%);padding: 0 15px;}
-    .control-btn {background: rgba(108,99,255,0.85);border: none;color: #fff;
-                  font-size: 1.8rem;padding: 12px;cursor: pointer;border-radius: 50%;
-                  transition: background 0.3s;}
-    .control-btn:hover {background: #ff6ec7;}
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+    }
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .project.card {
+      flex: 0 0 300px;
+      margin: 0 10px;
+      text-align: center;
+    }
+    .control-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #6c63ff;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .control-btn:hover { background: #ff6ec7; }
+    .control-btn:first-of-type { left: 10px; }
+    .control-btn:last-of-type { right: 10px; }
 
     /* Know More Button */
     .know-more {
@@ -70,7 +155,9 @@
       transition: background 0.3s;
       font-weight: 500;
     }
-    .know-more:hover {background: #ff6ec7;}
+    .know-more:hover {
+      background: #ff6ec7;
+    }
 
     /* Modal */
     .modal {
@@ -91,84 +178,122 @@
       width: 90%;
       color: #e5e5e5;
       box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-      animation: slideIn 0.4s ease;
     }
-    @keyframes slideIn {
-      from {transform: translateY(-50px);opacity: 0;}
-      to {transform: translateY(0);opacity: 1;}
+    .modal-content h3 { color: #6c63ff; }
+    .modal-content ul { padding-left: 20px; }
+    .close {
+      float: right;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #ff6ec7;
     }
-    .modal-content h3 {color: #6c63ff;margin-bottom: 15px;}
-    .modal-content ul {list-style: disc;padding-left: 20px;}
-    .close {float: right;font-size: 1.8rem;cursor: pointer;color: #ff6ec7;}
 
     /* Contact */
-    #contact {text-align: center;}
-    #contact a {font-weight: 600;}
-
-    /* Footer */
-    footer {text-align: center;padding: 25px;background: #111;color: #777;}
+    #contact form {
+      display: grid;
+      gap: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+    input, textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+    }
+    button[type="submit"] {
+      padding: 12px;
+      background: #6c63ff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover {
+      background: #ff6ec7;
+    }
 
     /* Responsive */
-    @media(max-width: 768px) {
-      #intro h1 {font-size: 2.5rem;}
-      nav {padding: 15px 20px;}
+    @media (max-width: 900px) {
+      .intro-container {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .intro-image img { max-width: 250px; }
     }
   </style>
 </head>
 <body>
-
   <!-- Navbar -->
   <nav>
-    <div><strong>Leena Sai</strong></div>
-    <div>
-      <a href="#intro">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
+    <a href="#intro">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Intro -->
+  <!-- Intro Section -->
   <section id="intro">
-    <h1>Hi, I'm Leena Sai</h1>
-    <p>Creative Software Engineer blending clean code with modern design. Passionate about web, mobile, and backend systems with a designer’s eye for detail.</p>
+    <div class="intro-container">
+      <div class="intro-text">
+        <h1>Hi, I'm Leena Sai 👋</h1>
+        <p>
+          I am a software engineer and data analyst blending software engineering 
+          and data analytics to build reliable, secure, and scalable applications 
+          for web and mobile.
+        </p>
+        <a href="#contact" class="btn">Contact Me</a>
+        <a href="LeenaSai_CV.pdf" class="btn secondary" download>Download CV</a>
+      </div>
+      <div class="intro-image">
+        <img src="images/profile.jpg" alt="Leena Sai">
+      </div>
+    </div>
   </section>
 
   <!-- About -->
   <section id="about">
     <h2>About Me</h2>
-    <p>I am a Software Engineer with expertise in OOP, algorithms, and full-stack development. I enjoy crafting user-friendly digital experiences, combining functionality with modern design aesthetics.</p>
+    <p>
+      Passionate software engineer & data analyst with hands-on experience in 
+      building scalable apps, data pipelines, and dashboards. Skilled in Python, 
+      SQL, React, and visualization tools. Always curious about new technologies.
+    </p>
   </section>
 
   <!-- Skills -->
   <section id="skills">
     <h2>Skills</h2>
-    <div class="card skill">Java</div>
-    <div class="card skill">TypeScript / JavaScript</div>
-    <div class="card skill">React / React Native</div>
-    <div class="card skill">Node.js / Express</div>
-    <div class="card skill">Spring Boot</div>
-    <div class="card skill">SQL / NoSQL</div>
-    <div class="card skill">Docker / Kubernetes</div>
-    <div class="card skill">AWS / Azure / GCP</div>
+    <div class="card-container">
+      <div class="card">Python</div>
+      <div class="card">SQL</div>
+      <div class="card">React</div>
+      <div class="card">Node.js</div>
+      <div class="card">Power BI</div>
+      <div class="card">Excel</div>
+    </div>
   </section>
 
   <!-- Experience -->
   <section id="experience">
     <h2>Experience</h2>
-    <div class="card">
-      <h3>Anukta Infotech Pvt Ltd | Software Engineer</h3>
-      <p>Developed modular components with Node.js & React, optimized PostgreSQL, built secure REST APIs, and collaborated in Agile sprints with CI/CD pipelines.</p>
-    </div>
-    <div class="card">
-      <h3>Innovalley IT Services | Web Developer Intern</h3>
-      <p>Built backend services in Node.js, created React modules, connected APIs to MySQL DB, and improved developer onboarding with process documentation.</p>
+    <div class="card-container">
+      <div class="card">
+        <h3>Anuktha Infotech Pvt Ltd</h3>
+        <p>Software Engineer (Jan 2023 – Jul 2023)</p>
+        <p>Built modular software components, APIs, and optimized PostgreSQL queries.</p>
+      </div>
+      <div class="card">
+        <h3>Innovalley IT Services</h3>
+        <p>Data Analyst (Jul 2022 – Dec 2022)</p>
+        <p>Designed ETL pipelines, dashboards, and automated reporting workflows.</p>
+      </div>
     </div>
   </section>
 
-  <!-- Projects Carousel -->
+  <!-- Projects -->
   <section id="projects">
     <h2>Projects</h2>
     <div class="carousel-container">
@@ -189,86 +314,96 @@
           <button class="know-more" onclick="openModal('portal')">Know More</button>
         </div>
       </div>
-      <div class="carousel-controls">
-        <button class="control-btn" onclick="prevSlide()">&#10094;</button>
-        <button class="control-btn" onclick="nextSlide()">&#10095;</button>
-      </div>
+      <button class="control-btn" onclick="prevSlide()">&#10094;</button>
+      <button class="control-btn" onclick="nextSlide()">&#10095;</button>
     </div>
   </section>
+
+  <!-- Project Modal -->
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3 id="modalTitle"></h3>
+      <ul id="modalDetails"></ul>
+    </div>
+  </div>
 
   <!-- Contact -->
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:leenasai182@gmail.com">leenasai182@gmail.com</a></p>
-    <p>Location: Chicago, IL</p>
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Leena Sai | Software Engineer Portfolio
-  </footer>
-
-  <!-- Modals -->
-  <div id="foodModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('food')">&times;</span>
-      <h3>Online Food Delivery System (May 2025)</h3>
-      <ul>
-        <li>Engineered a cross-platform mobile app in React Native with backend APIs in Node.js/Express.js.</li>
-        <li>Implemented JWT authentication, secure session handling, and structured MongoDB data models.</li>
-        <li>Applied software testing and debugging techniques to validate functionality and reliability.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div id="taskModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('task')">&times;</span>
-      <h3>Task Management App (Dec 2024)</h3>
-      <ul>
-        <li>Designed a task management app with React Native frontend and Node.js backend for real-time sync.</li>
-        <li>Built modular components in TypeScript to ensure scalability and maintainability.</li>
-        <li>Conducted end-to-end testing using Postman and deployed backend services on Heroku.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div id="portalModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('portal')">&times;</span>
-      <h3>Student Portal System (May 2024)</h3>
-      <ul>
-        <li>Built a secure student information portal with React frontend and Express.js backend.</li>
-        <li>Implemented role-based access control (Admin, Teacher, Student) and secure login flows.</li>
-        <li>Optimized client-server communication for efficiency and faster load times.</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- JS -->
   <script>
-    // Carousel
-    const carousel = document.getElementById('projectCarousel');
+    /* Carousel */
     let index = 0;
-    function showSlide(i) {
-      const total = carousel.children.length;
-      index = (i + total) % total;
-      carousel.style.transform = `translateX(${-index * 100}%)`;
+    function showSlide() {
+      const carousel = document.getElementById("projectCarousel");
+      carousel.style.transform = `translateX(${-index * 320}px)`;
     }
-    function nextSlide() { showSlide(index + 1); }
-    function prevSlide() { showSlide(index - 1); }
+    function prevSlide() {
+      if (index > 0) index--;
+      showSlide();
+    }
+    function nextSlide() {
+      const total = document.querySelectorAll(".project.card").length;
+      if (index < total - 1) index++;
+      showSlide();
+    }
 
-    // Modal
+    /* Modal */
+    const projectDetails = {
+      food: {
+        title: "Online Food Delivery System (May 2025)",
+        details: [
+          "Engineered a cross-platform mobile app in React Native with backend APIs in Node.js/Express.js.",
+          "Implemented JWT authentication, secure session handling, and structured MongoDB data models.",
+          "Applied software testing and debugging techniques to validate reliability."
+        ]
+      },
+      task: {
+        title: "Task Management App (Dec 2024)",
+        details: [
+          "Designed a task management app with React Native frontend and Node.js backend for real-time sync.",
+          "Built modular components in TypeScript ensuring scalability.",
+          "Conducted end-to-end testing and deployed backend on Heroku."
+        ]
+      },
+      portal: {
+        title: "Student Portal System (May 2024)",
+        details: [
+          "Built a secure student portal with React + Express.js backend.",
+          "Implemented role-based access control (Admin, Teacher, Student).",
+          "Optimized client-server communication for efficiency."
+        ]
+      }
+    };
     function openModal(project) {
-      document.getElementById(project + 'Modal').style.display = 'flex';
+      const modal = document.getElementById("projectModal");
+      const title = document.getElementById("modalTitle");
+      const detailsList = document.getElementById("modalDetails");
+      title.textContent = projectDetails[project].title;
+      detailsList.innerHTML = "";
+      projectDetails[project].details.forEach(d => {
+        const li = document.createElement("li");
+        li.textContent = d;
+        detailsList.appendChild(li);
+      });
+      modal.style.display = "flex";
     }
-    function closeModal(project) {
-      document.getElementById(project + 'Modal').style.display = 'none';
+    function closeModal() {
+      document.getElementById("projectModal").style.display = "none";
     }
     window.onclick = function(event) {
-      document.querySelectorAll('.modal').forEach(modal => {
-        if (event.target == modal) modal.style.display = 'none';
-      });
+      const modal = document.getElementById("projectModal");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
     }
   </script>
 </body>
