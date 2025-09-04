@@ -70,9 +70,7 @@
       transition: background 0.3s;
       font-weight: 500;
     }
-    .know-more:hover {
-      background: #ff6ec7;
-    }
+    .know-more:hover {background: #ff6ec7;}
 
     /* Modal */
     .modal {
@@ -175,23 +173,104 @@
     <h2>Projects</h2>
     <div class="carousel-container">
       <div class="carousel" id="projectCarousel">
-        <!-- Project 1 -->
         <div class="project card">
           <h3>Online Food Delivery System</h3>
           <p>Cross-platform app with React Native + Node.js/Express backend.</p>
           <button class="know-more" onclick="openModal('food')">Know More</button>
         </div>
-        <!-- Project 2 -->
         <div class="project card">
           <h3>Task Management App</h3>
           <p>Real-time sync app built with React Native + Node.js.</p>
           <button class="know-more" onclick="openModal('task')">Know More</button>
         </div>
-        <!-- Project 3 -->
         <div class="project card">
           <h3>Student Portal System</h3>
           <p>Secure portal with React + Express.js + role-based access.</p>
           <button class="know-more" onclick="openModal('portal')">Know More</button>
         </div>
       </div>
-      <
+      <div class="carousel-controls">
+        <button class="control-btn" onclick="prevSlide()">&#10094;</button>
+        <button class="control-btn" onclick="nextSlide()">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:leenasai182@gmail.com">leenasai182@gmail.com</a></p>
+    <p>Phone: +1 (312)-792-7051</p>
+    <p>Location: Chicago, IL</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Leena Sai | Software Engineer Portfolio
+  </footer>
+
+  <!-- Modals -->
+  <div id="foodModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('food')">&times;</span>
+      <h3>Online Food Delivery System (May 2025)</h3>
+      <ul>
+        <li>Engineered a cross-platform mobile app in React Native with backend APIs in Node.js/Express.js.</li>
+        <li>Implemented JWT authentication, secure session handling, and structured MongoDB data models.</li>
+        <li>Applied software testing and debugging techniques to validate functionality and reliability.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="taskModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('task')">&times;</span>
+      <h3>Task Management App (Dec 2024)</h3>
+      <ul>
+        <li>Designed a task management app with React Native frontend and Node.js backend for real-time sync.</li>
+        <li>Built modular components in TypeScript to ensure scalability and maintainability.</li>
+        <li>Conducted end-to-end testing using Postman and deployed backend services on Heroku.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="portalModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('portal')">&times;</span>
+      <h3>Student Portal System (May 2024)</h3>
+      <ul>
+        <li>Built a secure student information portal with React frontend and Express.js backend.</li>
+        <li>Implemented role-based access control (Admin, Teacher, Student) and secure login flows.</li>
+        <li>Optimized client-server communication for efficiency and faster load times.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    // Carousel
+    const carousel = document.getElementById('projectCarousel');
+    let index = 0;
+    function showSlide(i) {
+      const total = carousel.children.length;
+      index = (i + total) % total;
+      carousel.style.transform = `translateX(${-index * 100}%)`;
+    }
+    function nextSlide() { showSlide(index + 1); }
+    function prevSlide() { showSlide(index - 1); }
+
+    // Modal
+    function openModal(project) {
+      document.getElementById(project + 'Modal').style.display = 'flex';
+    }
+    function closeModal(project) {
+      document.getElementById(project + 'Modal').style.display = 'none';
+    }
+    window.onclick = function(event) {
+      document.querySelectorAll('.modal').forEach(modal => {
+        if (event.target == modal) modal.style.display = 'none';
+      });
+    }
+  </script>
+</body>
+</html>
